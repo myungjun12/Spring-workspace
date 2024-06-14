@@ -6,7 +6,8 @@ import lombok.*;
 @Setter
 @ToString
 @NoArgsConstructor  // 기본
-@AllArgsConstructor // 필수 
+@AllArgsConstructor // 필수
+
 public class Member {
 	private String memberName;
 	private String memberPhone;
