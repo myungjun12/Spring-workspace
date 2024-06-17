@@ -15,8 +15,11 @@ public class MemberController {
 	private MemberService memberService;
 	
 	//회원가입을 위해 작성할 GetMapping 작성하기
-	@GetMapping("/register")
-	public String 회원가입폼보기(Model model) {
+	@GetMapping("/")
+	
+	//회원가입으로 이동해서 작성하길 원한다면 /register 라는 주소명을 작성해주고 
+	//홈페이지에서 아무것도 작성안한 맨 처음부터 회원가입을 보길 원한다면 "/" 작성
+	public String registerForm(Model model) {
 		model.addAttribute("mem", new Member());
 		return "index";
 	}
@@ -24,7 +27,8 @@ public class MemberController {
 	@PostMapping("/register")
 	public String 회원가입완료(Member memer, Model model) {
 		//회원가입 작성이 완료가 되면 db에 저장하겠다.
-		memberService.멤버가입(memer);
+		//마찬가지로 멤버가입으로 작성한 메서드기능 호출명을 insertMember로 변경하기
+		memberService.insertMember(memer);
 		// model.addAttribute("select 로 db에 저장된 회원가입정보 가져오기"
 		model.addAttribute("msg", "멤버가 성공적으로 가입되었습니다.");
 		return "success";
