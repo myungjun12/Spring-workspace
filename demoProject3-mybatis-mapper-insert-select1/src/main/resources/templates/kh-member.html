@@ -1,0 +1,22 @@
+<<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>KH 학생정보</title>
+</head>
+<body>
+	<h1>KH 학생정보</h1>
+	
+	<form th:action="@{/kh}" method="post" th:object="${khMembers}">
+		<!-- goods_id 값은 nextValue로 자동으로 1씩 증가하게 설정했기 때문에 form에서는 작성 x -->
+		<!-- th:field="*{    }" * 표시는 th:object 값을 가져온다는 표시 -->
+		이름  : <input type="text"   th:field="*{username}"><br>
+		비밀번호 : <input type="text" th:field="*{password}"><br>
+		이메일 : <input type="text" th:field="*{email}"><br>
+		생성일 : <input type="text" th:field="*{created_at}"><br>
+		<button>가입하기</button>
+	</form>
+	
+	<a href="/">메인으로 돌아가기</a>
+</body>
+</html>
