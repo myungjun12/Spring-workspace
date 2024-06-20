@@ -15,7 +15,7 @@ public class CompanyController {
 	@Autowired
 	private CompanysService companysService;
 	
-	@GetMapping("/allCompany")
+	@GetMapping("/inquiry")
 	public String getAllCompanys(Model model) {
 	//회사목록 리스트를 companyList.html 전달
 	List<Companys> companyList = companysService.getAllCompanys();
