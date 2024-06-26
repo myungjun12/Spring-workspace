@@ -8,12 +8,10 @@ import com.khmall.dto.Pig;
 
 @Mapper
 public interface PigMapper {
-	//전체가져오기 -> List
+	//1. 돼지정보 전체 리스트 -> List(DTO pig) 
 	List<Pig> getAllPigs();
-	
-	//돼지정보 하나만 가져오기 
+	//2. 돼지정보 하나만 가져오기 -> DTO pig
 	Pig getPigById(int pig_id);
-	
-	//돼지정보 DB에 업로드하기
+	//3. 돼지정보 DB에 업로드하기 -> void (Pig)
 	public void uploadPig(Pig pig);
 }

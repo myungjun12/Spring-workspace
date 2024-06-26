@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace="com.khmall.mapper.ClothesMapper">
+	<!-- clothes에 DB 모든 정보조회 -->
+	<select id="getAllClothes" resultType="com.khmall.dto.Clothes" > <!-- WHERE 조건사용할거라면 parameterType=""사용 -->
+		SELECT * 
+		FROM clothes
+	</select>
+	<!-- clothes DB에 정보 insert -->
+	<insert id="uploadClothes" parameterType="com.khmall.dto.Clothes">
+		INSERT INTO clothes 
+		(clothes_id, clothes_name, clothes_price, clothes_category, clothes_image_path)
+		VALUES (clothes_seq.nextval, #{clothes_name}, #{clothes_price}, #{clothes_category}, #{clothes_image_path})
+	</insert>
+	
+</mapper>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+	<h1>옷가게</h1>
+	
+	<table>
+	<thead>
+		<tr>
+			<th>옷 이미지</th>
+			<th>옷 이름</th>
+			<th>옷 가격</th>
+			<th>옷 카테고리</th>
+			<th>옷 상세페이지</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="  c  : ${clothes} ">
+			<td th:src="@{${c.clothes_image_path}}"></td>
+			<td th:text="${c.clothes_name}"></td>
+			<td th:text="${c.clothes_price}"></td>
+			<td th:text="${c.clothes_category}"></td>
+			<td>
+				<a th:href="@{'/clothesDetail/' + ${c.clothes_id}  }">이동하기</a>/a>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+	
+	<a href="/imgUpload">옷 이미지와 상세정보 업로드</a>
+</body>
+</html>
