@@ -9,6 +9,7 @@ import com.khmall.dto.Goods;
 @Controller
 public class IndexController {
 	/*index html로 주소를 이동할 때 사용하는 GetMapping을 작성할 것입니다.*/
+	
 	@GetMapping("/productRegister")
 	public String productRegister(Model model) {
 		model.addAttribute("goods",new Goods());
