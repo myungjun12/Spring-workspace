@@ -15,4 +15,5 @@ public class IndexController {
 		model.addAttribute("goods",new Goods());
 		return "productRegister";
 	}
+
 }

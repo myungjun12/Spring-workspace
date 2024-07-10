@@ -16,11 +16,8 @@ public class MemberController {
 	
 	//회원가입을 위해 작성할 GetMapping 작성하기
 	@GetMapping("/")
-	
-	//회원가입으로 이동해서 작성하길 원한다면 /register 라는 주소명을 작성해주고 
-	//홈페이지에서 아무것도 작성안한 맨 처음부터 회원가입을 보길 원한다면 "/" 작성
 	public String registerForm(Model model) {
-		model.addAttribute("member", new Member());
+		model.addAttribute("mem", new Member());
 		return "index";
 	}
 	//나중에 회원가입을 완료하면 보일 PostMapping

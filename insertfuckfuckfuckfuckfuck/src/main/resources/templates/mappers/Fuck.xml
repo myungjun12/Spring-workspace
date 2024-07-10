@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+        <mapper namespace="com.kh.mapper.FuckMapper">
+        <insert id="FuckInsert" parameterType="com.kh.dto.Fuck">
+        	insert into goods_item(item_id, item_name, item_description)
+        	VALUES (goods_item_seq.NEXTVAL, #{item_name}, #{item_description})
+        </insert>
+        </mapper>

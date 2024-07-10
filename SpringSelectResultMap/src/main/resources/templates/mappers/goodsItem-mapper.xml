@@ -7,8 +7,7 @@
 		sql 컬럼명과 dto 변수명이 일치하다 표기
 		
 		resultMap이란 sql 컬럼명과 dto 모델에 변수명을 연결시켜주는 연결고리
-		column = sql 에 작성한 컬럼명
-		property = dto에 작성한 변수명
+		column = sql 에 작성한 컬럼명 / property = dto에 작성한 변수명
 		
 		Map이 시작하고 primary key는 id 에 필수로 작성 나머지는 result 에 작성	
 	-->

@@ -5,6 +5,13 @@
 <title>Ajax를 활용한 중복확인</title>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
+	//1  사용자가 사용하고자하는 상품명 작성
+	//2. 중복 확인 버튼 클릭
+	//3. $('#중복확인버튼').click(function() - input값
+	//4. url:'/itemCheck'- controller와 연결
+	//5. data:{controllerItemName:htmlItemName}, -컨트롤러네임 : 볼링
+	//6. 볼링이라는 값이 if(res.isCheck){ 들어왓나 안들어왓나 확인
+		
 	//document = html 문서한테 언제 사용자의 요청이 들어올지 모르겠지만 항상 어떠한 요청을 받을 때 실행할 준비를 하자
 	$(document).ready(function() {
 		$('#checkDup').click(function() { //checkDup 중복학인 버튼을 클릭하면 실행할 동작
@@ -14,7 +21,7 @@
 			var itemName = $('#itemName').val();
 			
 			console.log("itemName: " + itemName);
-		
+			
 			// 값 가져오기가 완료되었으면 ajax를 통해 controller와 연결하고 db에 일치하는 값이 있는지 확인
 			$.ajax({ //ajax 시작
 				//1. controller와 연결할(만날주소) url 설정

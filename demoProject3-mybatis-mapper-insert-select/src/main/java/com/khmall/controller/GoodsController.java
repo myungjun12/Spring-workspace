@@ -23,10 +23,11 @@ public class GoodsController {
 	public String insertProduct(Goods goods, Model model) {
 		productService.insertProduct(goods);
 		model.addAttribute("msg","상품이 성공적으로 등록됐습니다.");
-		return "productList";
+		return "redirect:/register-list";
+		
 	}
-	
-	@GetMapping("/product-list")
+	//return "redirect:/register-list";
+	@GetMapping("/register-list")
 	public String getAllProduct(Model model) {
 		List<Goods> productList = productService.getAllProduct();
 		log.info("상품전체목록 : " + productList);
