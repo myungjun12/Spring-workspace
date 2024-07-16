@@ -3,12 +3,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.kh.test.service.GoodsItemService;
-@Controller
+
+@RestController
 public class GoodsItemController {
 	
 	@Autowired
@@ -16,7 +17,7 @@ public class GoodsItemController {
 	
 	//@GetMapping("ajax에서 url에 작성한 url값 넣어주기")
 	//만약에 에러로 template[check]이 뜬다면 @controller-> @RestController로 변경
-	@GetMapping("/itemCheck")
+	@GetMapping("/goodsitem/check")
 	public Map<String, Object> existsByName(@RequestParam String itemName){
 		//만약에 상품명이 조회가 된다면 이미 존재하는 상품명입니다. 만들기
 		

@@ -18,16 +18,16 @@
 			// var = 변수자료형 input 태그에 id에 해당하는 아이디명을 가지고 올때는 #을 붙임
 			//#아이디값에 사용자가 입력한 값을 가져올 때는 value의 줄임말인 val()을 사용
 			//js 변수명    = html 에서 사용자가 작성한 내용을 자바스크립트로 가져오기
-			var itemName = $('#itemName').val();
+			var htmlItemName = $('#itemName').val();
 			
-			console.log("itemName: " + itemName);
+			console.log("itemName: " + htmlItemName);
 			
 			// 값 가져오기가 완료되었으면 ajax를 통해 controller와 연결하고 db에 일치하는 값이 있는지 확인
 			$.ajax({ //ajax 시작
 				//1. controller와 연결할(만날주소) url 설정
 				url:'/goodsitem/check', //controller에서 Mapping에 /goodsitem/check 작성한 메서드(기능과 연결)
 				type:'GET', //@GetMapping에 작성된 주소를 연결한다는 의미
-				data: {itemName: itemName}, //itemName 대신  $('#itemName').val(); 사용가능
+				data: {itemName: htmlItemName}, //itemName 대신  $('#itemName').val(); 사용가능
 				//name이라는 이름으로 controller에 itemName에 담긴 값을 전달
 				//키 : name 이라는 이름을 쓰겠다. 값 : itemName의 값을 가져오겠다.
 				//만약에 키 값을 itemName으로 모두 통일하길 원한다면

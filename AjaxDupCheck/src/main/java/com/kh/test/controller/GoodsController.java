@@ -4,27 +4,29 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.kh.test.service.GoodsService;
 
-@Controller
+import lombok.extern.slf4j.Slf4j;
+@Slf4j
+@RestController
 public class GoodsController {
 	
 	@Autowired
 	private GoodsService goodsService;
 
-	@ResponseBody //json Type으로 값을 가져오겠다.
+	
 	@GetMapping("/itemCheck")
-	public Map<String, Object> getGoods(@RequestParam String item_name) {
+	public Map<String, Object> getGoods(@RequestParam("item_name") String itemName) {
 		Map<String, Object> res = new HashMap<>();
 		
-		boolean isCheck = goodsService.getGoods(item_name);
-		res.put("isCheck", isCheck);
+		boolean isCheck = goodsService.getGoods(itemName);
 		
+		res.put("isCheck", isCheck);
+		System.out.println("isCheck : " + isCheck);
 		return res;
 	}
 }
